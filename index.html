@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app='weatherApp'>
+    <head>
+        <title>AngularJS Weather Forecast SPA</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+
+        <!-- load bootstrap and fontawesome via CDN -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+        <style>
+            body,html{
+                margin:0;
+                padding:0;
+                background-color:#76323f;
+            }
+            
+            .nav, .navbar-default {
+                border:0 !important;
+            }
+            
+            .navbar-brand, #home {
+                color:white !important;
+                font-family: 'Playfair Display SC', serif;
+                font-family: 'Cabin Sketch', cursive;
+                font-size:1.6em;
+                text-shadow:1px 1px 1px black;
+                font-weight:3em;
+            }
+            #titlehead,.forecasthead {
+                color:cornsilk;
+                font-family: 'Cabin Sketch', cursive;
+                text-align:;
+                font-size:1.9em;
+            }
+            .datainside {
+                color:aquamarine;
+                
+            }
+            #home {
+                border-bottom:0px;
+                transition:border 3s;
+            }
+            
+            #home:hover {
+                border-bottom:1px solid white;
+                transition:border 3s;
+            }
+            
+            .forecasthead {
+                border-bottom:1px solid white;
+            }
+            .cooldata {
+                color:white;
+                font-family: 'Cabin Sketch', cursive;
+                text-align:;
+                
+            }
+            .inputbox {
+                width:50%;
+                transition: width 3s;
+                background-color:#76323f;
+                color:white;
+                 font-family: 'Cabin Sketch', cursive;
+                font-size:1.2em;
+                letter-spacing:0.4em;
+                
+            }
+            
+            .coolmove {
+                width:100%;
+                background-color:#76323f;
+                transition: width 3s;
+                color:white;
+                 font-family: 'Cabin Sketch', cursive;
+                   font-size:1.2em;
+                letter-spacing:0.4em;
+            }
+            
+            .inputbtn,.btn,.btn-primary {
+                background-color:#76323f !important;
+                border:1px solid white !important;
+                font-family: 'Cabin Sketch', cursive;
+                box-shadow:2px 2px 2px black !important;
+            }
+            .inputbtn:hover {
+                background-color:#76323f !important;
+                border:3px solid white !important;
+                font-family: 'Cabin Sketch', cursive;
+                  
+            }
+            
+            textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+    border-color:white;
+    box-shadow: 0 1px 1px white inset, 0 0 8px white;
+    outline: 0 none;
+}
+
+            
+            
+        </style>
+        
+        <!-- load angular via CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+       
+        <script src="app.js"></script>
+        
+        
+    </head>
+    <body>
+
+        <header>
+			<nav style="background-color:#76323f;" class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"> Weather App </a>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a id='home' href="#"><i class="fa fa-home"></i> Home</a></li>
+				</ul>
+			</div>
+			</nav>
+		</header>
+
+        <div class="container">
+
+               <div ng-view></div>
+		</div>
+        
+        <script>
+           $(document).ready(function(){
+               $('.form-control').mouseover(function(){
+                   $(this).removeClass('inputbox');
+                   $(this).addClass('coolmove');
+               })
+               
+               $('.form-control').mouseleave(function(){
+                   $(this).addClass('inputbox');
+                   $(this).removeClass('coolmove');
+               })
+           })
+        
+        </script>
+
+    </body>
+</html>

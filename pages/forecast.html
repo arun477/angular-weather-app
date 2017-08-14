@@ -1,0 +1,22 @@
+<h1 class='forecasthead'>ForeCast for: {{city}}</h1>
+
+
+<div class='row'>
+    <div class='col-md-12 cooldata'>
+        <h3>Country : <span class='datainside'>{{weatherResult.sys.country}}</span></h3>
+        <h3>Place : <span class='datainside'>{{weatherResult.name}}</span></h3>
+        <h3>Climate :<span class='datainside'> <img ng-src='http://openweathermap.org/img/w/{{weatherResult.weather[0].icon}}.png'/>{{weatherResult.weather[0].description}}</span></h3>
+        <h3>Temperature :<span class='datainside'> {{weatherResult.main.temp}} kelvin</span></h3>
+        <h3>Pressure : <span class='datainside'>{{weatherResult.main.pressure}}</span> </h3>
+        <h3>Humidity : <span class='datainside'>{{weatherResult.main.humidity+
+            '%'}}</span></h3>
+        
+      
+        
+        
+    </div>
+
+
+
+
+</div>
