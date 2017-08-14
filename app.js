@@ -14,6 +14,18 @@ weatherApp.service('cityService',function(){
 //CONTROLLERS
 weatherApp.controller('homeController',['$scope','cityService',function($scope,cityService){
     $scope.city = cityService.city;
+     $scope.ani = function(){
+        
+         $('.form-control').removeClass('inputbox');
+                   $('.form-control').addClass('coolmove');
+    }
+    
+     $scope.ani2 = function(){
+        
+         $('.form-control').addClass('inputbox');
+                   $('.form-control').removeClass('coolmove');
+    }
+    
     
     $scope.$watch('city',function(){
         cityService.city = $scope.city;
